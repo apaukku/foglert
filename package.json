@@ -1,0 +1,14 @@
+{
+  "name": "Foglert",
+  "version": "1.0.0",
+
+  "repository": {
+  	"type": "git",
+    "url": "https://github.com/apaukku/foglert
+  },
+
+  "engines": {
+    "node": "5.6.0",
+    "npm": "4.5.0"
+  },
+}
