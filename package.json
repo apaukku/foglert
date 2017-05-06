@@ -6,7 +6,7 @@
   	"type": "git",
     "url": "https://github.com/apaukku/foglert
   },
-  "engines": {
+   "engines": {
     "node": "5.6.0"
-  },
+  }
 }
