@@ -1,6 +1,6 @@
 http = require('http');
-
-const apiKey = 'a00488d2822040f2ae8172923170605'
+console.log(process.env);
+const apiKey = process.env.APIXU_APIKEY;
 
 const options = {
   host: 'api.apixu.com',

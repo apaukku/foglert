@@ -1,3 +1,4 @@
+if(!process.env.APIXU_APIKEY) require('../env');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
