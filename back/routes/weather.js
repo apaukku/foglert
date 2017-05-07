@@ -3,11 +3,9 @@ var weatherService = require('../service/weather');
 var router = express.Router();
 
 
-router.get('/', function(req, res, next) {
+router.get('/:location', function(req, res, next) {
 
-  weatherService.getHourly('Espoo', (json)=>{
-    console.log('weather-data-ready ');
-    console.log(json);
+  weatherService.getHourly(req.params.location, (json)=>{
     res.setHeader('Content-Type', 'application/json');
     res.send(json);
   });
