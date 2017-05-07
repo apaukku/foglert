@@ -1,20 +1,28 @@
 var request = require('supertest');
+var assert = require("assert");
+
 describe('testing weather', function () {
   var server = require('../app');
 
 
 
-  it('responds to /weather', function testSlash(done) {
+  it('responds to /weather/Espoo', (done)=> {
   request(server)
-    .get('/weather')
+    .get('/weather/Espoo')
     .expect(200, done);
   });
 
-  it('returns json from /weather', function testSlash(done) {
+
+
+  it('returns location specific results /weather/:location', (done)=> {
   request(server)
-    .get('/weather')
+    .get('/weather/Espoo')
     .expect(200)
-    .expect('Content-Type', /json/,done);
+    .expect('Content-Type', /json/)
+    .end(function(err,res){
+      assert.equal(res.body.location.name, "Espoo");
+      done();
+    });
   });
 
 });
