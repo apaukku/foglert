@@ -25,4 +25,10 @@ describe('testing weather', function () {
     });
   });
 
+  it('returns error with failing location /weather/:location', (done)=> {
+  request(server)
+    .get('/weather/Espoox')
+    .expect(500,done);
+  });
+
 });
