@@ -22,7 +22,6 @@ exports.forecastWeather = function forecastWeather(query, noOfDays, callback){
 		   body += chunk;
 	  });
 	  res.on('end', function () {
-      console.log(body);
       callback(body);
 	  });
 	}).on('error', function(err) {
