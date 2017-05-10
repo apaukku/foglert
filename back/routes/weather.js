@@ -4,7 +4,8 @@ var router = express.Router();
 
 
 router.get('/:location', function(req, res, next) {
-
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
   weatherService.getHourly(req.params.location, (json)=>{
     res.setHeader('Content-Type', 'application/json');
     if(JSON.parse(json).error){
