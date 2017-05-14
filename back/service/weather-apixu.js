@@ -61,6 +61,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
     hour = hours[i];
     sanitized_hour = {};
     time = new Date(hour.time_epoch*1000).getHours();
+    if(time==0) time = 24;
 
     sanitized_hour.time_epoch = hour.time_epoch;
     sanitized_hour.hour = time;
