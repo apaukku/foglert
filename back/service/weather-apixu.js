@@ -60,8 +60,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
   for (var i = 0, len = hours.length; i < len; i++) {
     hour = hours[i];
     sanitized_hour = {};
-    time = new Date(hour.time_epoch*1000).getHours();
-    if(time==0) time = 24;
+    time = (new Date(hour.time_epoch*1000).getUTCHours()+3)%24;
 
     sanitized_hour.time_epoch = hour.time_epoch;
     sanitized_hour.hour = time;
@@ -83,7 +82,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
     sanitized_hours[i] = sanitized_hour;
 
   }
-  sanitized_hours.sort(dynamicSort("hour"));
+
   return sanitized_hours;
 }
 
