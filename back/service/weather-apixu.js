@@ -62,6 +62,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
     sanitized_hour = {};
     time = new Date(hour.time_epoch*1000).getHours();
 
+    sanitized_hour.time_epoch = hour.time_epoch;
     sanitized_hour.hour = time;
     sanitized_hour.is_day = hour.is_day;
     sanitized_hour.temp_c = hour.temp_c;
@@ -81,6 +82,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
     sanitized_hours[i] = sanitized_hour;
 
   }
+  sanitized_hours.sort(dynamicSort("time_epoch"));
   return sanitized_hours;
 }
 
@@ -98,4 +100,16 @@ function isFog(humidity,temp_c,dewpoint_c,cloud,wind_kph){
   if( Math.abs(temp_c - dewpoint_c) > 2) return 0;
   if( cloud > 75) return 0;
   return 1;
+}
+
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
 }
