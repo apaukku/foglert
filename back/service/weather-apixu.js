@@ -82,7 +82,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
     sanitized_hours[i] = sanitized_hour;
 
   }
-  sanitized_hours.sort(dynamicSort("time_epoch"));
+  sanitized_hours.sort(dynamicSort("hour"));
   return sanitized_hours;
 }
 
