@@ -10,9 +10,9 @@ const options = {
 };
 
 const sunrise_start = 0;
-const sunrise_end = 2;
+const sunrise_end = 3;
 const sunset_start = -2;
-const sunset_end = 1;
+const sunset_end = 0;
 
 
 
