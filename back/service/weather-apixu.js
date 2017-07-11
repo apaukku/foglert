@@ -60,7 +60,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
   for (var i = 0, len = hours.length; i < len; i++) {
     hour = hours[i];
     sanitized_hour = {};
-    time = (new Date(hour.time_epoch*1000).getUTCHours()+3)%24;
+    time = (new Date(hour.time_epoch*1000).getUTCHours()+3-1)%24; //+3 finnish time & -1 first hour is 0
 
     sanitized_hour.time_epoch = hour.time_epoch;
     sanitized_hour.hour = time;
