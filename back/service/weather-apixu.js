@@ -9,10 +9,10 @@ const options = {
   method: 'GET'
 };
 
-const sunrise_start = 0;
+const sunrise_start = -1;
 const sunrise_end = 3;
 const sunset_start = -2;
-const sunset_end = 0;
+const sunset_end = 1;
 
 
 
