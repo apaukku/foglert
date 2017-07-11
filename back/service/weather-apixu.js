@@ -67,6 +67,7 @@ function cleanHours(hours,sunrise_h,sunset_h){
     sanitized_hour.is_day = hour.is_day;
     sanitized_hour.temp_c = hour.temp_c;
     sanitized_hour.wind_kph = hour.wind_kph;
+    sanitized_hour.wind_mps = Math.round(hour.wind_kph/3.6);
     sanitized_hour.humidity = hour.humidity;
     sanitized_hour.cloud = hour.cloud;
     sanitized_hour.dewpoint_c = hour.dewpoint_c;
